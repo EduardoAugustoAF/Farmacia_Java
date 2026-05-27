@@ -27,24 +27,35 @@ O sistema simula as operações reais de uma farmácia, permitindo o controle de
 ---
 
 
-​## 👥 Divisão de Tarefas
-​Divisão de Tarefas
-​Pra organizar o desenvolvimento, dividimos o grupo entre a galera que vai focar na lógica por trás do sistema (Back-end) e quem vai cuidar das telas e da interação com o usuário (Front-end).
-​⚙️ Back-End
-​**Marlon Ian**
-​Criar a estrutura principal das classes (Produto, Medicamento, Cosmetico, Pessoa e Cliente).
-​Aplicar a herança e o polimorfismo (como a lógica diferenciada do calcularDesconto()).
-​Criar as regras de negócio para medicamentos controlados que precisam de receita.
-​**Eduardo Augusto**
-​Criar as interfaces do sistema (como IVendavel ou IAutenticavel).
-​Montar e gerenciar as listas e mapas (List, Map, Set) para salvar o estoque, clientes e o histórico de vendas na memória.
-​Desenvolver os métodos de busca e filtros rápidos de produtos.
-​🎨 Front-End
-​**Pedro Vieira**
-​Desenvolver a tela de vendas e o fluxo do carrinho de compras (atualizando os valores e subtotais).
-​Criar os avisos e validações na tela (como o alerta de retenção de receita para remédios controlados).
-​Ligar os campos da tela de vendas com as funções de backend.
-​**Milton Carlos**
-​Desenvolver as telas de gerenciamento do estoque (cadastro, edição e exclusão de produtos).
-​Criar a parte visual da barra de busca e dos filtros de produtos.
-​Fazer a tela de cadastro e listagem dos clientes.
+​
+## 👨‍💻 Divisão de Tarefas
+
+Pra organizar o desenvolvimento, dividimos o grupo entre a galera que vai focar na lógica por trás do sistema (Back-end) e quem vai cuidar das telas e da interação com o usuário (Front-end).
+
+### ⚙️ Back-End
+
+**Marlon Ian**
+
+* Criar a estrutura principal das classes (Produto, Medicamento, Cosmetico, Pessoa e Cliente).
+* Aplicar a herança e o polimorfismo (como a lógica diferenciada do calcularDesconto()).
+* Criar as regras de negócio para medicamentos controlados que precisam de receita.
+
+**Eduardo Augusto**
+
+* Criar as interfaces do sistema (como IVendavel ou IAutenticavel).
+* Montar e gerenciar as listas e mapas (List, Map, Set) para salvar o estoque, clientes e o histórico de vendas na memória.
+* Desenvolver os métodos de busca e filtros rápidos de produtos.
+
+### 🎨 Front-End
+
+**Pedro Vieira**
+
+* Desenvolver a tela de vendas e o fluxo do carrinho de compras (atualizando os valores e subtotais).
+* Criar os avisos e validações na tela (como o alerta de retenção de receita para remédios controlados).
+* Ligar os campos da tela de vendas com as funções de backend.
+
+**Milton Segundo**
+
+* Desenvolver as telas de gerenciamento do estoque (cadastro, edição e exclusão de produtos).
+* Criar a parte visual da barra de busca e dos filtros de produtos.
+* Fazer a tela de cadastro e listagem dos clientes.
