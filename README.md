@@ -24,7 +24,7 @@ O sistema simula as operações reais de uma farmácia, permitindo o controle de
 * 📋 **Regras de Negócio:** Tratamento diferenciado para itens controlados que exigem retenção de receita médica.
 * 🔍 **Consultas Rápidas:** Filtros e buscas na lista de produtos utilizando recursos nativos do Java.
 
-
+---
 
 
 ​## 👥 Divisão de Tarefas
