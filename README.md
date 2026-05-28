@@ -34,7 +34,7 @@ Pra organizar o desenvolvimento, dividimos o grupo entre a galera que vai focar 
 
 ### ⚙️ Back-End
 
-**Marlon Ian**
+**Marlon Dantas**
 
 * Criar a estrutura principal das classes (Produto, Medicamento, Cosmetico, Pessoa e Cliente).
 * Aplicar a herança e o polimorfismo (como a lógica diferenciada do calcularDesconto()).
