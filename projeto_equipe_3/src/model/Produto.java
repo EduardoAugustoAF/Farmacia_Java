@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Produto {
+public abstract class Produto implements IVendavel, IEstocavel{
     protected String id;
     protected String nome;
     protected double preco;
