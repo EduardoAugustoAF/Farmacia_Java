@@ -46,5 +46,37 @@ public class Medicamento extends Produto {
         }
     }
 
-   
+    public String getPrincipioAtivo() {
+        return principioAtivo;
+    }
+
+    public void setPrincipioAtivo(String principioAtivo) {
+        this.principioAtivo = principioAtivo;
+    }
+
+    public String getDosagem() {
+        return dosagem;
+    }
+
+    public void setDosagem(String dosagem) {
+        this.dosagem = dosagem;
+    }
+
+    // O método que resolve o erro "isNecessitaReceita() is undefined"
+    public boolean isNecessitaReceita() {
+        return necessitaReceita;
+    }
+
+    public void setNecessitaReceita(boolean necessitaReceita) {
+        this.necessitaReceita = necessitaReceita;
+    }
+
+    // O método que resolve o erro "getDataValidade() is undefined"
+    public Date getDataValidade() {
+        return dataValidade;
+    }
+
+    public void setDataValidade(Date dataValidade) {
+        this.dataValidade = dataValidade;
+    }
 }
