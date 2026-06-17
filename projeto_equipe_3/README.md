@@ -1,61 +1,147 @@
-#  Sistema de Gestão de Farmácia (Farmacia_Java)
+# Sistema de Gestão de Farmácia (Farmacia_Java)
 
-Um sistema de gerenciamento para farmácias desenvolvido inteiramente em **Java**. O objetivo principal deste projeto é projetar e implementar uma arquitetura de software aplicando na prática conceitos avançados de **Programação Orientada a Objetos (POO)**.
+Sistema acadêmico desenvolvido em **Java** para simular as operações de uma farmácia, aplicando conceitos de **Programação Orientada a Objetos (POO)** e boas práticas de desenvolvimento de software.
+
+Além da implementação da lógica de negócio, o projeto conta com uma **interface gráfica em Java Swing**, permitindo a interação do usuário com os módulos de estoque, vendas e relatórios.
+
 
 ---
 
-##  Visão Geral do Projeto
+## Objetivo do Projeto
 
-O sistema simula as operações reais de uma farmácia, permitindo o controle de estoque, o cadastro de diferentes tipos de produtos, a gestão de clientes e o processamento de vendas. É um projeto focado em código limpo, organização e boas práticas de desenvolvimento.
+O sistema foi desenvolvido para solucionar problemas comuns encontrados no ambiente farmacêutico, como:
 
-###  Conceitos de POO Aplicados
+* Controle inadequado de estoque;
+* Comercialização de medicamentos que exigem receita médica;
+* Erros em processos de venda e cálculo de valores;
+* Falta de centralização das informações de clientes, funcionários e produtos.
 
-*  **Herança:** Uso de classes base (como `Produto` ou `Pessoa`) que são estendidas por classes mais específicas (`Medicamento`, `Cosmetico`, `Cliente`), reaproveitando o código de forma inteligente.
-*  **Polimorfismo:** Implementação de métodos que se comportam de maneiras diferentes dependendo do objeto (ex: a regra para `calcularDesconto()` muda se o item for um medicamento comum ou um cosmético).
-*  **Interfaces:** Criação de contratos padronizados para isolar comportamentos do sistema (ex: `IVendavel` ou `IAutenticavel`), garantindo um código flexível e fácil de manter.
-*  **Coleções (Collections):** Utilização de estruturas de dados do Java (como `List`, `Set` e `Map`) para gerenciar o estoque, os carrinhos de compras e os históricos em memória com eficiência.
-
----
-
-## Funcionalidades Principais
-
-*  **Gestão de Estoque:** Cadastro, atualização e baixa de medicamentos comuns, controlados e cosméticos.
-*  **Fluxo de Vendas:** Adição de produtos ao carrinho, cálculo automático de subtotais e aplicação de descontos específicos.
-*  **Regras de Negócio:** Tratamento diferenciado para itens controlados que exigem retenção de receita médica.
-*  **Consultas Rápidas:** Filtros e buscas na lista de produtos utilizando recursos nativos do Java.
+A proposta foi criar uma solução simples, organizada e escalável, utilizando os principais conceitos estudados na disciplina de Programação Orientada a Objetos.
 
 ---
 
+## Conceitos de POO Aplicados
 
-​
-## Divisão de Tarefas
+### Herança
 
-Pra organizar o desenvolvimento, dividimos o grupo entre a galera que vai focar na lógica por trás do sistema (Back-end) e quem vai cuidar das telas e da interação com o usuário (Front-end).
+Utilização de classes abstratas para representar estruturas comuns do sistema.
 
-### Back-End
+Exemplos:
 
-**Marlon Dantas**
+* `Pessoa` → `Cliente` e `Funcionario`
+* `Produto` → `Medicamento` e `ProdutoGenerico`
 
-* Criar a estrutura principal das classes (Produto, Medicamento, Cosmetico, Pessoa e Cliente).
-* Aplicar a herança e o polimorfismo (como a lógica diferenciada do calcularDesconto()).
-* Criar as regras de negócio para medicamentos controlados que precisam de receita.
+### Polimorfismo
 
-**Eduardo Augusto**
+Implementação de comportamentos específicos para cada tipo de produto, permitindo diferentes regras de cálculo e processamento.
 
-* Criar as interfaces do sistema (como IVendavel ou IAutenticavel).
-* Montar e gerenciar as listas e mapas (List, Map, Set) para salvar o estoque, clientes e o histórico de vendas na memória.
-* Desenvolver os métodos de busca e filtros rápidos de produtos.
+### Encapsulamento
 
-### Front-End
+Proteção dos atributos internos das classes através de métodos de acesso e validações.
 
-**Pedro Vieira**
+### Interfaces
 
-* Desenvolver a tela de vendas e o fluxo do carrinho de compras (atualizando os valores e subtotais).
-* Criar os avisos e validações na tela (como o alerta de retenção de receita para remédios controlados).
-* Ligar os campos da tela de vendas com as funções de backend.
+Padronização de comportamentos utilizando interfaces como:
 
-**Milton Segundo**
+* `IVendavel`
+* `IEstocavel`
 
-* Desenvolver as telas de gerenciamento do estoque (cadastro, edição e exclusão de produtos).
-* Criar a parte visual da barra de busca e dos filtros de produtos.
-* Fazer a tela de cadastro e listagem dos clientes.
+### Collections
+
+Uso de estruturas como:
+
+* `ArrayList`
+* `Map`
+* `Set`
+
+para gerenciamento de estoque, vendas e cadastros.
+
+---
+
+## Funcionalidades
+
+### Gestão de Estoque
+
+* Cadastro de produtos;
+* Controle de quantidade disponível;
+* Busca por nome ou código;
+* Atualização automática após vendas.
+
+### Gestão de Vendas
+
+* Registro de vendas;
+* Cálculo automático de totais;
+* Geração de relatórios;
+* Validação de estoque disponível.
+
+### Controle de Medicamentos
+
+* Verificação de validade;
+* Controle de medicamentos que exigem receita médica;
+* Tratamento de exceções específicas.
+
+### Interface Gráfica
+
+Desenvolvida em **Java Swing**, permitindo:
+
+* Cadastro de produtos;
+* Controle de estoque;
+* Registro de vendas;
+* Visualização de relatórios;
+* Navegação por abas.
+
+### Modo Console
+
+Também foi implementado um modo alternativo utilizando `Scanner`, permitindo a execução das principais operações diretamente pelo terminal.
+
+---
+
+# Equipe do Projeto
+
+| Integrante                                  | Contribuições                                                                                                                                          |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Marlon Ian Ferreira Dantas**              | Desenvolvimento do site de documentação, implementação de funcionalidades do back-end e organização geral do projeto. |
+| **Eduardo Augusto Alves de Farias**         | Desenvolvimento da estrutura principal do sistema, modelagem das classes, regras de negócio e implementação da lógica principal da aplicação.          |
+| **Pedro Vieira Salvador Lopes**             | Estruturação da documentação, desenvolvimento do site no Google Sites, apoio na integração entre documentação, integração da interface gráfica e sistema.                               |
+| **Milton Carlos Ferreira da Silva Segundo** | Design da documentação, organização visual do site e apoio na estruturação dos conteúdos apresentados.                                                 |
+| **Vinícius Cavalcante Lima**                | Apoio no desenvolvimento do projeto, validação das funcionalidades e participação nas atividades de implementação e testes.                            |
+
+---
+
+## Tecnologias Utilizadas
+
+* Java
+* Java Swing
+* Programação Orientada a Objetos (POO)
+* Collections Framework
+* Git
+* GitHub
+* Google Sites
+
+---
+
+## Estrutura do Projeto
+
+```text
+src/
+├── model/
+├── service/
+├── exception/
+├── util/
+├── view/
+└── main/
+```
+
+---
+
+## Desenvolvido para
+
+**Centro Universitário de João Pessoa – UNIPÊ**
+
+Disciplina: **Programação Orientada a Objetos**
+
+Curso: **Ciência da Computação**
+
+Período: **3º Período**
+
+
