@@ -760,16 +760,83 @@ public class FarmaciaGUI extends JFrame {
             }
         }
 
-        sb.append("\nRELATÓRIOS DOS OBJETOS\n");
-        sb.append("------------------------------------------------------------\n");
-        for (Cliente cliente : clientes) {
-            sb.append(cliente.gerarRelatorio()).append("\n");
-        }
-        for (Funcionario funcionario : funcionarios) {
-            sb.append(funcionario.gerarRelatorio()).append("\n");
-        }
+        adicionarSecaoClientesCadastrados(sb);
+        adicionarSecaoFuncionariosCadastrados(sb);
 
         relatorioArea.setText(sb.toString());
+    }
+
+    private void adicionarSecaoClientesCadastrados(StringBuilder sb) {
+        sb.append("\nCLIENTES CADASTRADOS\n");
+        sb.append("------------------------------------------------------------\n");
+
+        if (clientes.isEmpty()) {
+            sb.append("Nenhum cliente cadastrado até o momento.\n");
+            return;
+        }
+
+        List<String> cpfsListados = new ArrayList<>();
+        int contador = 1;
+
+        for (Cliente cliente : clientes) {
+            String chave = normalizarChave(cliente.getCpf());
+            if (chave.isEmpty()) {
+                chave = normalizarChave(cliente.getNome() + cliente.getTelefone());
+            }
+
+            if (cpfsListados.contains(chave)) {
+                continue;
+            }
+
+            cpfsListados.add(chave);
+            sb.append(contador).append(". ")
+              .append("Nome: ").append(cliente.getNome())
+              .append(" | CPF: ").append(cliente.getCpf())
+              .append(" | Telefone: ").append(cliente.getTelefone())
+              .append(" | Pontos: ").append(cliente.getPontosFidelidade())
+              .append("\n");
+            contador++;
+        }
+    }
+
+    private void adicionarSecaoFuncionariosCadastrados(StringBuilder sb) {
+        sb.append("\nFUNCIONÁRIOS CADASTRADOS\n");
+        sb.append("------------------------------------------------------------\n");
+
+        if (funcionarios.isEmpty()) {
+            sb.append("Nenhum funcionário cadastrado até o momento.\n");
+            return;
+        }
+
+        List<String> matriculasListadas = new ArrayList<>();
+        int contador = 1;
+
+        for (Funcionario funcionario : funcionarios) {
+            String chave = normalizarChave(funcionario.getMatricula());
+            if (chave.isEmpty()) {
+                chave = normalizarChave(funcionario.getCpf() + funcionario.getNome());
+            }
+
+            if (matriculasListadas.contains(chave)) {
+                continue;
+            }
+
+            matriculasListadas.add(chave);
+            sb.append(contador).append(". ")
+              .append("Nome: ").append(funcionario.getNome())
+              .append(" | Matrícula: ").append(funcionario.getMatricula())
+              .append(" | Cargo: ").append(funcionario.getCargo())
+              .append(" | Telefone: ").append(funcionario.getTelefone())
+              .append("\n");
+            contador++;
+        }
+    }
+
+    private String normalizarChave(String texto) {
+        if (texto == null) {
+            return "";
+        }
+        return texto.trim().toLowerCase().replaceAll("\\s+", "");
     }
 
     private void ajustarCamposPorTipo() {

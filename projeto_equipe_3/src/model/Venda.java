@@ -20,7 +20,8 @@ public class Venda implements IRelatorio {
     }
 
     public void adicionarItem(Produto produto, int quantidade){
-        this.itens.put(produto, quantidade);
+        int quantidadeAtual = this.itens.containsKey(produto) ? this.itens.get(produto) : 0;
+        this.itens.put(produto, quantidadeAtual + quantidade);
     }
 
     public double calcularTotal(){
